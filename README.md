@@ -1,0 +1,2 @@
+# AutoSendMessageOnWeChat
+基于Windows的自动发送微信信息（可用在会议通知和逢年过节）
