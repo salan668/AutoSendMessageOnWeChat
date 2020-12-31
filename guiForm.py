@@ -76,15 +76,14 @@ class GuiForm(QWidget, Ui_Form):
     def ClockCount(self):
         if self.remain_time > 0:
             self.remain_time -= 1
+            self.labelRemainTime.setText('激活微信剩余时间：\n{}s'.format(self.remain_time))
         else:
             self.timer.stop()
-        self.labelRemainTime.setText('激活微信剩余时间：\n{}s'.format(self.remain_time))
+            self.SendMessage()
+            self.remain_time = 10
 
-    def Run(self):
+    def SendMessage(self):
         ag.PAUSE = 1
-
-        self.timer.start(1000)
-
         for person, content in self.contact.Browse():
             time.sleep(1)
             ag.hotkey('ctrl', 'f')
@@ -100,6 +99,13 @@ class GuiForm(QWidget, Ui_Form):
             ag.keyDown('enter')
 
         QMessageBox.about(self, 'Done', 'Done')
+
+
+    def Run(self):
+        self.timer.start(1000)
+
+
+
 
 
 if __name__ == '__main__':
