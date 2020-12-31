@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>630</width>
-    <height>638</height>
+    <width>861</width>
+    <height>706</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,11 +19,11 @@
   <property name="windowTitle">
    <string>微信消息自动发送</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_3">
-   <item>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QLabel" name="label_4">
          <property name="font">
@@ -35,7 +35,7 @@
           </font>
          </property>
          <property name="text">
-          <string>微信消息自动发送 (V.1)</string>
+          <string>微信消息自动发送 (V.1.2)</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -43,44 +43,62 @@
         </widget>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QLabel" name="label_2">
            <property name="text">
             <string>1.请确保已经打开PC端微信窗口；
-2.通讯录json文件已正确编辑，每个人在您的通讯录中唯一</string>
+2.通讯录json文件已正确编辑，每个人在您的通讯录中唯一；
+3.点击发送消息后，有10秒钟时间手动点击微信窗口，并令其至于最前，全部消息发送完毕前，请误操作电脑，
+  之至出现发送完毕的对话框。</string>
            </property>
           </widget>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QLabel" name="label">
-             <property name="text">
-              <string>通讯录文件路径</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEditContact"/>
-           </item>
-           <item>
-            <widget class="QPushButton" name="buttonContact">
-             <property name="text">
-              <string>浏览</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QLabel" name="labelRemainTime">
+           <property name="font">
+            <font>
+             <family>Adobe Arabic</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
-            <string>发送消息</string>
+            <string>激活微信剩余时间：
+10s</string>
            </property>
           </widget>
          </item>
         </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>通讯录文件路径</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditContact"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonContact">
+           <property name="text">
+            <string>浏览</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>发送消息</string>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QLabel" name="label_3">
@@ -111,7 +129,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>src/alipay.jpg</pixmap>
+          <pixmap>../ScriptGithub/MyWechat/src/alipay.jpg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -139,7 +157,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>src/wechatpay.jpg</pixmap>
+          <pixmap>../ScriptGithub/MyWechat/src/wechatpay.jpg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
