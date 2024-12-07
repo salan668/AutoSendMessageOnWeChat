@@ -7,12 +7,13 @@ import base64
 import os
 from io import BytesIO
 import sys
-import win32gui, win32con
+# import win32gui, win32con
 import time
 import pyperclip
 
 import pyautogui as ag
 from PyQt5.QtWidgets import *
+
 from PyQt5 import QtGui
 from PyQt5.QtCore import QThread, pyqtSignal, QTimer
 from PIL import ImageQt, Image
@@ -23,9 +24,9 @@ from gui import Ui_Form
 from pic2str import ali, wechat
 
 
-def window_enumeration_handler(hwnd, top_windows):
-    """Add window title and ID to array."""
-    top_windows.append((hwnd, win32gui.GetWindowText(hwnd)))
+# def window_enumeration_handler(hwnd, top_windows):
+#     """Add window title and ID to array."""
+#     top_windows.append((hwnd, win32gui.GetWindowText(hwnd)))
 
 
 def ConvertByte2Image(code, picture_name):
@@ -87,16 +88,21 @@ class GuiForm(QWidget, Ui_Form):
         for person, content in self.contact.Browse():
             time.sleep(1)
             ag.hotkey('ctrl', 'f')
+            time.sleep(1)
 
             pyperclip.copy(person)
             ag.hotkey('ctrl', 'v')
+            time.sleep(1)
 
             ag.keyDown('enter')
+            time.sleep(1)
 
             pyperclip.copy(content)
             ag.hotkey('ctrl', 'v')
+            time.sleep(1)
 
             ag.keyDown('enter')
+            time.sleep(1)
 
         QMessageBox.about(self, 'Done', 'Done')
 
